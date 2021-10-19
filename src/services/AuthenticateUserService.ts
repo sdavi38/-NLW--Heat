@@ -10,8 +10,8 @@
  */
 
 import axios from "axios";
-//mport prismaClient from "../prisma/"
-//import { sign } from 'jsonwebtoken'
+//import prismaClient from "../prisma/"
+import { sign } from 'jsonwebtoken'
 
 interface IAccessTokenResponse {
     access_token: string,
@@ -50,14 +50,15 @@ class AuthenticateUserService{
             }
 
         })    //Se tiver token válido 
-          const response = await axios.get("https://api.github.com/user",{
+          const response = await axios.get<IUserResponse>("https://api.github.com/user",{
               headers:{
                   authorization: `Bearer ${accessTokenResponse.access_token}`
               }
           })
-        return response.data
-    }
-
-}
+         
+      
+          return response.data
+        }
+      }
 
 export{AuthenticateUserService}
