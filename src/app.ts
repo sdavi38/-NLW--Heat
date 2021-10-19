@@ -5,8 +5,7 @@ import cors from 'cors'
 import { Server } from 'socket.io'
 
 import { router } from "./routes/routes"
-const PORT = 3000
-
+  
 const app = express()
 
 app.use(cors())
@@ -42,4 +41,6 @@ app.get("/signin/callback",(request, response)=>{
     return response.json(code)
 })
 
-app.listen(PORT , () => console.log( `Server is running on ${PORT}`))
+
+
+export { serverHttp, io }
