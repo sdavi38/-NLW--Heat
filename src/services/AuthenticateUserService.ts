@@ -16,6 +16,13 @@ import axios from "axios";
 interface IAccessTokenResponse {
     access_token: string,
   }
+
+  interface IUserResponse {
+    avatar_url: string,
+    login: string,
+    id: number,
+    name: string,
+  }
   
   interface IUserResponse {
     avatar_url: string,
@@ -42,13 +49,12 @@ class AuthenticateUserService{
                 "Accept":"application/json"
             }
 
-        })
-        const  response = await axios.get("https://api.github.com/user",{
-            headers:{
-                authorization:`Bearer${accessTokenResponse.access_token}`
-            }
-        })
-
+        })    //Se tiver token válido 
+          const response = await axios.get("https://api.github.com/user",{
+              headers:{
+                  authorization: `Bearer ${accessTokenResponse.access_token}`
+              }
+          })
         return response.data
     }
 
