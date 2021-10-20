@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="NLW"  height="120" title="templat" src=".github/nlw.png" />
+  <img alt="NLW"  height="130" width="400" title="templat" src=".github/nlw.png" />
 </h1>
 
 <p align="center">
