@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { CreateMessageService } from '../services/CreateMenssageServices'
+import { CreateMessageService } from '../services/CreateMenssageService'
 
 
 class CreateMessageController {
